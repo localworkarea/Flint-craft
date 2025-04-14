@@ -1,0 +1,359 @@
+@font-face {
+  font-family: Movavi;
+  font-display: swap;
+  src: url(../fonts/Movavi-Grotesque-Black-Italic.woff2) format("woff2");
+  font-weight: 400;
+  font-style: italic
+}
+* {
+  padding: 0;
+  margin: 0;
+  border: 0
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box
+}
+*::after,
+*::before {
+  display: inline-block
+}
+html {
+  min-height: 100vh
+}
+body,
+html {
+  height: 100%;
+  min-width: 320px
+}
+body {
+  color: #fff;
+  line-height: 1;
+  font-family: Movavi,sans-serif;
+  font-size: 1rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent
+}
+button,
+input,
+textarea {
+  font-family: Movavi,sans-serif;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: rgba(0,0,0,0)
+}
+input,
+textarea {
+  width: 100%
+}
+label {
+  display: inline-block
+}
+button,
+option,
+select {
+  cursor: pointer
+}
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none
+}
+ul li {
+  list-style: none
+}
+img {
+  vertical-align: top
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit
+}
+body {
+  background-color: #000
+}
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: none
+}
+.loaded body {
+  opacity: 1;
+  transition: opacity .3s
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden
+}
+@supports (overflow:clip) {
+  .wrapper {
+    overflow: clip
+  }
+}
+.wrapper>main {
+  flex: 1 1 auto
+}
+.wrapper>* {
+  min-width: 0
+}
+[class*=__container] {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 .9375rem
+}
+[class*="--gc"] {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: .9375rem 1fr minmax(auto,73.125rem) 1fr .9375rem
+}
+[class*="--gc"]>* {
+  min-width: 0;
+  grid-column: 3/4
+}
+.fp-init body {
+  overflow: hidden;
+  touch-action: none;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: none
+}
+[data-fp] {
+  min-height: 100svh
+}
+.fp-init [data-fp] {
+  z-index: 1;
+  touch-action: none;
+  position: relative;
+  overflow: hidden
+}
+.fp-switching [data-fp-section] {
+  touch-action: none
+}
+.fp-init [data-fp-section] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto
+}
+.fp-init .fade-mode [data-fp-section] {
+  transition: opacity .45s ease-in-out 0s,visibility .45s ease-in-out 0s
+}
+.ibg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.ibg--top {
+  -o-object-position: top;
+  object-position: top
+}
+.ibg--bottom {
+  -o-object-position: bottom;
+  object-position: bottom
+}
+.ibg--left {
+  -o-object-position: left;
+  object-position: left
+}
+.ibg--right {
+  -o-object-position: right;
+  object-position: right
+}
+.ibg--contain {
+  -o-object-fit: contain;
+  object-fit: contain
+}
+.section__wrapper {
+  position: absolute;
+  overflow: hidden;
+  inset: 0;
+  z-index: 1
+}
+.section__bg {
+  position: absolute;
+  inset: 0
+}
+.logo__crount-norm,
+.logo__crount-spin,
+.logo__flint-spin,
+.logo__flint-svg {
+  width: 100%;
+  height: auto
+}
+.loaded .logo__crount-spin,
+.logo__crount-norm,
+.logo__flint-spin,
+.logo__flint-svg {
+  transition: opacity .45s ease
+}
+@-webkit-keyframes spin-1 {
+  0% {
+    -webkit-transform: rotate(0) scale(2.1);
+    transform: rotate(0) scale(2.1)
+  }
+  100% {
+    -webkit-transform: rotate(1080deg) scale(1);
+    transform: rotate(1080deg) scale(1)
+  }
+}
+@keyframes spin-1 {
+  0% {
+    -webkit-transform: rotate(0) scale(2.1);
+    transform: rotate(0) scale(2.1)
+  }
+  100% {
+    -webkit-transform: rotate(1080deg) scale(1);
+    transform: rotate(1080deg) scale(1)
+  }
+}
+.logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: 5;
+  pointer-events: none
+}
+.loaded .logo {
+  transition: top .85s ease 1.4s
+}
+.logo__wrapper {
+  position: relative;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: rotate(0) scale(2.1);
+  transform: rotate(0) scale(2.1)
+}
+.loaded .logo__wrapper {
+  -webkit-animation: spin-1 2s ease .5s normal forwards;
+  animation: spin-1 2s ease .5s normal forwards
+}
+.logo__flint {
+  position: relative;
+  z-index: 2;
+  height: auto;
+  opacity: 0
+}
+.loaded .logo__flint {
+  opacity: 1;
+  transition: opacity .45s ease 1.2s
+}
+.logo__flint-svg {
+  position: relative;
+  z-index: 1
+}
+.logo__flint-spin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2
+}
+.loaded .logo__flint-spin {
+  opacity: 0;
+  transition-delay: 1.7s
+}
+.logo__crount {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  height: auto
+}
+.loaded .logo__crount {
+  opacity: 0;
+  transition: opacity .45s ease 1.2s
+}
+.logo__crount-norm {
+  position: relative;
+  z-index: 2
+}
+.loaded .logo__crount-norm {
+  opacity: 0;
+  transition-delay: .5s
+}
+.logo__crount-spin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0
+}
+.loaded .logo__crount-spin {
+  opacity: 1;
+  transition-delay: .4s
+}
+.section-0::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  backdrop-filter: blur(15px);
+  background-color: rgba(0,0,0,.4)
+}
+.loaded .section-0::before {
+  opacity: 0;
+  transition: opacity .85s linear 1.4s
+}
+@media (min-width:93.81125em) {
+  .loaded .logo {
+    top: 14%
+  }
+}
+@media (min-width:120.06125em) {
+  .logo__flint {
+    width: 6.25rem
+  }
+  .logo__crount {
+    width: 14.5rem
+  }
+}
+@media (max-width:93.81125em) {
+  .loaded .logo {
+    top: 20%
+  }
+}
+@media (max-width:90.06125em) {
+  .logo__flint {
+    width: 4.375rem
+  }
+  .logo__crount {
+    width: 10.125rem
+  }
+}
+@media (max-width:30.06125em) {
+  .logo__flint {
+    width: 6.25rem!important
+  }
+  .logo__crount {
+    width: 10.75rem!important
+  }
+}
+@media (min-width:90.06125em)and (max-width:120.06125em) {
+  .logo__flint {
+    width: clamp(4.375rem ,-1.253828125rem + 6.25vw ,6.25rem)
+  }
+  .logo__crount {
+    width: clamp(10.125rem ,-3.0089322917rem + 14.5833333333vw ,14.5rem)
+  }
+}
