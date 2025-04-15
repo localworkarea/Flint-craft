@@ -210,6 +210,154 @@ body {
     transform: rotate(1080deg) scale(1)
   }
 }
+@-webkit-keyframes spin-2 {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+  35% {
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg)
+  }
+  65% {
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg)
+  }
+  100% {
+    -webkit-transform: rotate(1440deg);
+    transform: rotate(1440deg)
+  }
+}
+@keyframes spin-2 {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+  35% {
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg)
+  }
+  65% {
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg)
+  }
+  100% {
+    -webkit-transform: rotate(1440deg);
+    transform: rotate(1440deg)
+  }
+}
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0
+  }
+  35% {
+    opacity: 1
+  }
+  65% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0
+  }
+  35% {
+    opacity: 1
+  }
+  65% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+@-webkit-keyframes opacity-2 {
+  0% {
+    opacity: 0
+  }
+  25% {
+    opacity: 1
+  }
+  75% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+@keyframes opacity-2 {
+  0% {
+    opacity: 0
+  }
+  25% {
+    opacity: 1
+  }
+  75% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+@-webkit-keyframes opacity-2-rev {
+  0% {
+    opacity: 1
+  }
+  25% {
+    opacity: 0
+  }
+  75% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+@keyframes opacity-2-rev {
+  0% {
+    opacity: 1
+  }
+  25% {
+    opacity: 0
+  }
+  75% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+@-webkit-keyframes opacity-rev {
+  0% {
+    opacity: 1
+  }
+  35% {
+    opacity: 0
+  }
+  65% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+@keyframes opacity-rev {
+  0% {
+    opacity: 1
+  }
+  35% {
+    opacity: 0
+  }
+  65% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
 .logo {
   position: fixed;
   top: 50%;
@@ -236,6 +384,10 @@ body {
   -webkit-animation: spin-1 2s ease .5s normal forwards;
   animation: spin-1 2s ease .5s normal forwards
 }
+._step-03 .logo__wrapper {
+  -webkit-animation: spin-2 3s ease 0s normal forwards;
+  animation: spin-2 3s ease 0s normal forwards
+}
 .logo__flint {
   position: relative;
   z-index: 2;
@@ -249,6 +401,10 @@ body {
 .logo__flint-svg {
   position: relative;
   z-index: 1
+}
+._step-03 .logo__flint-svg {
+  -webkit-animation: opacity-rev 3s ease 0s normal forwards;
+  animation: opacity-rev 3s ease 0s normal forwards
 }
 .logo__flint-spin {
   position: absolute;
@@ -273,6 +429,10 @@ body {
   opacity: 0;
   transition: opacity .45s ease 1.2s
 }
+._step-03 .logo__crount {
+  -webkit-animation: opacity 3s ease 0s normal forwards;
+  animation: opacity 3s ease 0s normal forwards
+}
 .logo__crount-norm {
   position: relative;
   z-index: 2
@@ -280,6 +440,10 @@ body {
 .loaded .logo__crount-norm {
   opacity: 0;
   transition-delay: .5s
+}
+._step-03 .logo__crount-norm {
+  -webkit-animation: opacity 3s ease 0s normal forwards;
+  animation: opacity 3s ease 0s normal forwards
 }
 .logo__crount-spin {
   position: absolute;
@@ -291,6 +455,10 @@ body {
 .loaded .logo__crount-spin {
   opacity: 1;
   transition-delay: .4s
+}
+._step-03 .logo__crount-spin {
+  -webkit-animation: opacity-2 3s ease 0s normal forwards;
+  animation: opacity-2 3s ease 0s normal forwards
 }
 .over-els {
   pointer-events: none;

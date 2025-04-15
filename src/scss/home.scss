@@ -30,6 +30,81 @@
     transform: rotate(1080deg) scale(1);
   }
 }
+@keyframes spin-2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(720deg);
+  }
+  
+  65% {
+    transform: rotate(720deg);
+  }
+  100% {
+    transform: rotate(1440deg);
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  
+  65% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity-2 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity-2-rev {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes opacity-rev {
+  0% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  
+  65% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 .logo {
   position: fixed;
@@ -50,9 +125,9 @@
     }
     transition: top .85s ease 1.4s;
   }
-    ._step-03 & {
-      transition-delay: 0s;
-    }
+  ._step-03 & {
+    transition-delay: 0s;
+  }
 	// .logo__wrapper
 	&__wrapper {
     position: relative;
@@ -60,6 +135,9 @@
     transform: rotate(0deg) scale(2.1);
     .loaded & {
       animation: spin-1 2s ease 0.5s normal forwards;
+    }
+    ._step-03 & {
+      animation: spin-2 3s ease 0s normal forwards;
     }
 	}
   // .logo__flint
@@ -86,6 +164,9 @@
     z-index: 1;
     @extend %ImgSize;
     @extend %transition-1;
+    ._step-03 & {
+      animation: opacity-rev 3s ease 0s normal forwards;
+    }
   }
   // .logo__flint-spin
   &__flint-spin {
@@ -113,6 +194,9 @@
       opacity: 0;
       transition: opacity .45s ease 1.2s;
     }
+    ._step-03 & {
+      animation: opacity 3s ease 0s normal forwards;
+    }
     @media (max-width:$mobileSmall){
        width: toRem(172) !important; 
     }
@@ -130,6 +214,9 @@
       opacity: 0;
       transition-delay: 0.5s;
     }
+    ._step-03 & {
+      animation: opacity 3s ease 0s normal forwards;
+    }
   }
   // .logo__crount-spin
   &__crount-spin {
@@ -143,6 +230,9 @@
       opacity: 1;
       @extend %transition-1;
       transition-delay: 0.4s;
+    }
+    ._step-03 & {
+      animation: opacity-2 3s ease 0s normal forwards;
     }
   }
 }
@@ -298,6 +388,9 @@
       opacity: 1;
       transform: translate(0%,0%) rotate(-5.7deg);
     }
+    .fp-section-1 & {
+  
+    }
   }
   @media (max-width:$mobileSmall){
     left: 60%;
@@ -373,6 +466,7 @@
       transition: opacity .85s linear 1.4s;
     }
   }
+
   // .section-0__wrapper
   &__wrapper {
   }
