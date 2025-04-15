@@ -39,15 +39,20 @@
   z-index: 5;
   pointer-events: none;
   .loaded & {
-    @media (min-width:toEm(1500.98)){
+    @media (min-width:toEm(1550.98)){
       top: 14%;
     }
-    @media (max-width:toEm(1500.98)){
+    @media (max-width:toEm(1550.98)){
       top: 20%;
     }
-
+    @media (max-width:toEm(390.98)){
+       top: 10%; 
+    }
     transition: top .85s ease 1.4s;
   }
+    ._step-03 & {
+      transition-delay: 0s;
+    }
 	// .logo__wrapper
 	&__wrapper {
     position: relative;
@@ -70,7 +75,10 @@
     }
     @media (max-width:$mobileSmall){
       width: toRem(100) !important; 
-   }
+    }
+    @media (max-width: toEm(380.98)){
+      width: toRem(80) !important; 
+    }
   }
   // .logo__flint-svg
   &__flint-svg {
@@ -108,6 +116,9 @@
     @media (max-width:$mobileSmall){
        width: toRem(172) !important; 
     }
+    @media (max-width: toEm(380.98)){
+       width: toRem(137) !important; 
+    }
   }
   // .logo__crount-norm
   &__crount-norm {
@@ -138,6 +149,7 @@
 
 .over-els {
   pointer-events: none;
+  overflow: hidden;
   position: fixed;
   inset: 0;
   z-index: 2;
@@ -147,37 +159,200 @@
   // .over-els__txt
   &__txt {
     position: absolute;
+    .loaded & {
+      transition: transform .75s ease, bottom .75s ease, left .75s ease, opacity .45s ease;
+    }
+    ._step-02 &,
+    ._step-03 & {
+      transition-delay: 0s;
+    }
+    // .over-els__txt--00
+    &--00 {
+      bottom: 0%;
+      opacity: 0;
+      .loaded & {
+        transition-delay: 1.4s;
+      }
+      ._step-02 &,
+      ._step-03 & {
+        transition-delay: 0s;
+      }
+      @media (min-width:toEm(1500.98)){
+        .loaded & {
+          bottom: 10% !important;
+        }
+      }
+      @media (min-width:$mobileSmall){
+        left: 8%;
+        transform: translate(0,100%);
+        .loaded & {
+          bottom: 14%;
+          transform: translate(0,0%);
+          opacity: 1;
+        }
+        ._step-02 & {
+          left: 0;
+          transform: translate(-100%,0%);
+        }
+      }
+      @media (max-width:$mobileSmall){
+        left: 50%;
+        transform: translate(-50%,100%);
+        .loaded & {
+          bottom: 7%;
+          transform: translate(-50%,0%);
+          opacity: 1;
+        }
+        ._step-02 & {
+          left: 0;
+          transform: translate(-100%,0%);
+        }
+      }
+    }
+    // .over-els__txt--01
+    &--01 {
+      z-index: 3;
+      left: 100%;
+      opacity: 0;
+      ._step-02 & {
+        opacity: 1;
+      }
+      @media (min-width:$mobileSmall){
+        bottom: 14%;
+        ._step-02 & {
+          left: 8%;
+        }
+      }
+      @media (max-width:$mobileSmall){
+        bottom: 7%;
+        transform: translate(0%,0%);
+        ._step-02 & {
+          left: 50%;
+          transform: translate(-50%,0%);
+        }
+      }
+      
+    }
+  }
+  // .over-els__txt-wr
+  &__txt-wr {
     width: max-content;
-    @include adaptiveValue("padding", 30, 21,2,1920.98,1440.98);
-    @include adaptiveValue("padding", 21, 12,3,1440.98,480.98);
+    @include adaptiveValue("padding-block", 20, 14,2,1920.98,1440.98);
+    @include adaptiveValue("padding-block", 14, 12,3,1440.98,480.98);
+    @include adaptiveValue("padding-inline", 27, 21,2,1920.98,1440.98);
+    @include adaptiveValue("padding-inline", 21, 12,3,1440.98,480.98);
     background: linear-gradient(94deg, #ea2815 0%, #d30b54 100%);
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
     transform: rotate(-6deg) skew(-6deg);
     transform-origin: center;
     text-align: center;
     p {
-      transform: rotate(-0.5deg) skew(8deg);
     }
-  }
-  // .over-els__txt--00
-  &__txt--00 {
-    bottom: 14%;
-    left: 8%
   }
 }
 
+// размер шрифта для пк на 10% меньше макетного
 .txt-fs-1 {
-  @include adaptiveValue("font-size", 122, 85,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 110, 85,2,1920.98,1440.98);
   @include adaptiveValue("font-size", 85, 55,3,1440.98,480.98);
 }
 .txt-fs-2 {
-  @include adaptiveValue("font-size", 83, 58,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 75, 58,2,1920.98,1440.98);
   @include adaptiveValue("font-size", 58, 37,3,1440.98,480.98);
 }
 .txt-fs-3 {
-  @include adaptiveValue("font-size", 58, 40,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 52, 40,2,1920.98,1440.98);
   @include adaptiveValue("font-size", 40, 26,3,1440.98,480.98);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
+}
+.txt-fs-4 {
+  @include adaptiveValue("font-size", 47, 40,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 40, 31,3,1440.98,480.98);
+  letter-spacing: -0.01em;
+  line-height: 1.03;
+}
+
+
+.pack-open {
+  position: absolute;
+  z-index: 2;
+  .loaded & {
+    transition: transform .75s ease, bottom .75s ease, left .75s ease, opacity .45s ease;
+  }
+  @include adaptiveValue("width", 360,287,2,1920.98,1440.98);
+  @include adaptiveValue("width", 287,173,3,1440.98,480.98);
+  img {
+    @extend %ImgSize;
+  }
+  @media (min-width:toEm(1550.98)){
+    bottom: 4%;
+  }
+  @media (min-width:$mobileSmall){
+    left: 54%;
+    bottom: 14%;
+    opacity: 0;
+    transform: translate(0%,0%) rotate(11deg) scale(0.55);
+    ._step-02 & {
+      left: 12%;
+      bottom: 24%;
+      opacity: 1;
+      transform: translate(0%,0%) rotate(-5.7deg);
+    }
+  }
+  @media (max-width:$mobileSmall){
+    left: 60%;
+    bottom: 18%;
+    opacity: 0;
+    transform: translate(0%,0%) rotate(11deg) scale(0.7);
+    ._step-02 & {
+      left: 10%;
+      bottom: 16%;
+      opacity: 1;
+      transform: translate(0%,0%) rotate(-5.7deg);
+    }
+  }
+  @media (max-width: toEm(390.98)){
+    bottom: 27%;
+  }
+  // .pack-open__up
+  &__up {
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+    transform-origin: 0;
+    ._step-02 & {
+      transform: translate(-100%,0) rotate(-40deg);
+      transition: transform .85s ease 0.55s;
+    }
+  }
+  // .pack-open__img-up
+  &__img-up {
+  }
+  // .pack-open__dw
+  &__dw {
+    position: relative;
+    z-index: 3;
+  }
+  // .pack-open__img-dw
+  &__img-dw {
+  }
+  // .pack-open__crount
+  &__crount {
+    position: absolute;
+    z-index: 1;
+    top: 5%;
+    left: 51%;
+    width: 75%;
+    transform: translate(-50%,0);
+    ._step-02 & {
+      top: -5%;
+      transition: top .45s ease 0.75s;
+    }
+  }
+  // .pack-open__img-crount
+  &__img-crount {
+  }
 }
 
 
@@ -203,6 +378,11 @@
   }
   // .section-0__bg
   &__bg {
+    img {
+      @media (max-width:$mobileSmall){
+         object-position: bottom; 
+      }
+    }
   }
 }
 

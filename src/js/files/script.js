@@ -11,14 +11,14 @@ window.addEventListener("load", () => {
     document.documentElement.classList.add("_step-01");
 
     setTimeout(() => {
-      document.documentElement.classList.replace("_step-01", "_step-02");
+      document.documentElement.classList.add("_step-02");
 
       setTimeout(() => {
-        document.documentElement.classList.replace("_step-02", "_step-03");
+        document.documentElement.classList.add("_step-03");
 
-      }, 1000);
+      }, 1200);
 
-    }, 2500);
+    }, 3500);
 
   }, 0);
 });
