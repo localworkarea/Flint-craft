@@ -303,6 +303,35 @@ body {
   opacity: 1;
   transition-delay: .4s
 }
+.over-els {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2
+}
+.over-els__txt {
+  position: absolute;
+  width: -webkit-max-content;
+  width: max-content;
+  background: linear-gradient(94deg,#ea2815 0,#d30b54 100%);
+  box-shadow: 0 0 20px 0 rgba(0,0,0,.2);
+  -webkit-transform: rotate(-6deg) skew(-6deg);
+  transform: rotate(-6deg) skew(-6deg);
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  text-align: center
+}
+.over-els__txt p {
+  -webkit-transform: rotate(-.5deg) skew(8deg);
+  transform: rotate(-.5deg) skew(8deg)
+}
+.over-els__txt--00 {
+  bottom: 14%;
+  left: 8%
+}
+.txt-fs-3 {
+  letter-spacing: -.03em
+}
 .section-0::before {
   content: "";
   position: absolute;
@@ -327,6 +356,18 @@ body {
   .logo__crount {
     width: 14.5rem
   }
+  .over-els__txt {
+    padding: 1.875rem
+  }
+  .txt-fs-1 {
+    font-size: 7.625rem
+  }
+  .txt-fs-2 {
+    font-size: 5.1875rem
+  }
+  .txt-fs-3 {
+    font-size: 3.625rem
+  }
 }
 @media (max-width:93.81125em) {
   .loaded .logo {
@@ -348,6 +389,18 @@ body {
   .logo__crount {
     width: 10.75rem!important
   }
+  .over-els__txt {
+    padding: .75rem
+  }
+  .txt-fs-1 {
+    font-size: 3.4375rem
+  }
+  .txt-fs-2 {
+    font-size: 2.3125rem
+  }
+  .txt-fs-3 {
+    font-size: 1.625rem
+  }
 }
 @media (min-width:90.06125em)and (max-width:120.06125em) {
   .logo__flint {
@@ -355,5 +408,31 @@ body {
   }
   .logo__crount {
     width: clamp(10.125rem ,-3.0089322917rem + 14.5833333333vw ,14.5rem)
+  }
+  .over-els__txt {
+    padding: clamp(1.3125rem ,-.3761484375rem + 1.875vw ,1.875rem)
+  }
+  .txt-fs-1 {
+    font-size: clamp(5.3125rem ,-1.6297213542rem + 7.7083333333vw ,7.625rem)
+  }
+  .txt-fs-2 {
+    font-size: clamp(3.625rem ,-1.0656901042rem + 5.2083333333vw ,5.1875rem)
+  }
+  .txt-fs-3 {
+    font-size: clamp(2.5rem ,-.877296875rem + 3.75vw ,3.625rem)
+  }
+}
+@media (min-width:30.06125em)and (max-width:90.06125em) {
+  .over-els__txt {
+    padding: clamp(.75rem ,.4681757813rem + .9375vw ,1.3125rem)
+  }
+  .txt-fs-1 {
+    font-size: clamp(3.4375rem ,2.4980859375rem + 3.125vw ,5.3125rem)
+  }
+  .txt-fs-2 {
+    font-size: clamp(2.3125rem ,1.6549101563rem + 2.1875vw ,3.625rem)
+  }
+  .txt-fs-3 {
+    font-size: clamp(1.625rem ,1.1866067708rem + 1.4583333333vw ,2.5rem)
   }
 }

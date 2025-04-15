@@ -136,6 +136,52 @@
   }
 }
 
+.over-els {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  // .over-els__wrapper
+  &__wrapper {
+  }
+  // .over-els__txt
+  &__txt {
+    position: absolute;
+    width: max-content;
+    @include adaptiveValue("padding", 30, 21,2,1920.98,1440.98);
+    @include adaptiveValue("padding", 21, 12,3,1440.98,480.98);
+    background: linear-gradient(94deg, #ea2815 0%, #d30b54 100%);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    transform: rotate(-6deg) skew(-6deg);
+    transform-origin: center;
+    text-align: center;
+    p {
+      transform: rotate(-0.5deg) skew(8deg);
+    }
+  }
+  // .over-els__txt--00
+  &__txt--00 {
+    bottom: 14%;
+    left: 8%
+  }
+}
+
+.txt-fs-1 {
+  @include adaptiveValue("font-size", 122, 85,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 85, 55,3,1440.98,480.98);
+}
+.txt-fs-2 {
+  @include adaptiveValue("font-size", 83, 58,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 58, 37,3,1440.98,480.98);
+}
+.txt-fs-3 {
+  @include adaptiveValue("font-size", 58, 40,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 40, 26,3,1440.98,480.98);
+  letter-spacing: -0.03em;
+}
+
+
+
 
 // === SECTION 0 ================================
 .section-0 {
