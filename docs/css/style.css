@@ -1113,10 +1113,6 @@ body {
     -o-object-position: bottom;
     object-position: bottom
   }
-  .section-2__bg img {
-    -o-object-position: top;
-    object-position: top
-  }
   .section-3__bg img {
     -o-object-position: bottom;
     object-position: bottom
@@ -1330,6 +1326,16 @@ body {
   .logo__crount {
     width: 8.5625rem!important
   }
+  .over-els__txt--02 {
+    top: 50%
+  }
+  .fp-section-2 .over-els__txt--03 {
+    bottom: 19%
+  }
+  .fp-section-3 .over-els__txt--04,
+  .fp-section-4 .over-els__txt--04 {
+    top: 60%
+  }
 }
 @media (min-width:90.06125em)and (max-width:120.06125em) {
   .txt-fs-1 {
@@ -1433,6 +1439,12 @@ body {
   }
   .fp-section-4 .logo {
     top: 10%
+  }
+}
+@media (max-width:51.31125em)and (min-width:23.81125em) {
+  .section-2__bg img {
+    -o-object-position: top;
+    object-position: top
   }
 }
 @media (min-width:30.06125em)and (max-width:120.06125em) {

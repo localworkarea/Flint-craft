@@ -316,6 +316,9 @@
       @media (max-width: toEm(390.98)){
         top: 60%;
       }
+      @media (max-width: toEm(380.98)){
+        top: 50%;
+      }
       .fp-section-1 & {
         left: 50%;
         transform: translate(-50%,-50%);
@@ -334,6 +337,9 @@
      .fp-section-2 & {
        left: 50%;
        transform: translate(-50%,0%);
+       @media (max-width: toEm(380.98)){
+         bottom: 19%;
+       }
      }
      .fp-section-3 &,
      .fp-section-4 & {
@@ -355,6 +361,9 @@
         }
         @media (max-width: toEm(820.98)){
           top: 68%;
+        }
+        @media (max-width: toEm(380.98)){
+          top: 60%;
         }
       }
       .fp-section-4 & {
@@ -688,7 +697,7 @@
 
   &__bg {
     img {
-      @media (max-width:toEm(820.98)){
+      @media (max-width:toEm(820.98)) and (min-width: toEm(380.98)) {
          object-position: top; 
       }
     }
