@@ -229,6 +229,13 @@
         setEvents() {
             this.wrapper.addEventListener("wheel", this.events.wheel);
             this.wrapper.addEventListener("touchstart", this.events.touchdown);
+            const nextArrowBtns = document.querySelectorAll(".scroll-btn");
+            nextArrowBtns.forEach((nextArrowBtn => {
+                nextArrowBtn.addEventListener("click", (() => {
+                    const nextSectionId = this.activeSectionId + 1;
+                    if (nextSectionId < this.sections.length) this.switchingSection(nextSectionId);
+                }));
+            }));
         }
         removeEvents() {
             this.wrapper.removeEventListener("wheel", this.events.wheel);

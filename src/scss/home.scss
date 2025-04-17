@@ -177,6 +177,9 @@
     @media (max-width: toEm(1550.98)) and (min-width:toEm(820.98)){
       top: 10%;
     }
+    // @media (max-width: toEm(820.98)){
+    //   top: 8%;
+    // }
   }
 	// .logo__wrapper
 	&__wrapper {
@@ -295,7 +298,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   z-index: 2;
   // .over-els__txt
   &__txt {
@@ -358,13 +361,13 @@
     &--01 {
       z-index: 3;
       left: 100%;
-      bottom: 14%;
+      // bottom: 14%;
       opacity: 0;
       ._step-02 & {
         opacity: 1;
       }
       @media (min-width:$mobileSmall){
-        // bottom: 14%;
+        bottom: 14%;
         ._step-02 & {
           left: 8%;
         }
@@ -374,7 +377,7 @@
         }
       }
       @media (max-width:$mobileSmall){
-        // bottom: 14%;
+        bottom: 8%;
         transform: translate(0%,0%);
         ._step-02 & {
           left: 50%;
@@ -391,10 +394,10 @@
     &--02 {
       left: 100%;
       @media (min-width:toEm(820.98)){
-        bottom: 14%;
+        bottom: 18%;
       }
       @media (max-width: toEm(820.98)){
-        top: 45%;          
+        top: 50%;          
       }
       @media (max-width: toEm(390.98)){
         top: 40%;
@@ -413,7 +416,7 @@
     // .over-els__txt--03
     &--03 {
      left: 100%;
-     bottom: 14%;
+     bottom: 16%;
      .fp-section-2 & {
        left: 50%;
        transform: translate(-50%,0%);
@@ -437,7 +440,7 @@
           top: 25%;
         }
         @media (max-width: toEm(820.98)){
-          top: 75%;
+          top: 68%;
         }
       }
       .fp-section-4 & {
@@ -505,6 +508,60 @@
   letter-spacing: -0.01em;
 }
 
+.scroll-btn {
+  position: absolute;
+  z-index: 10;
+  bottom: 0%;
+  transform: translate(-50%,100%);
+  
+  display: grid;
+  place-items: center;
+  width: toRem(80);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background: linear-gradient(93deg, #d30b54 0%, #ea2815 100%);
+  @media (min-width:$mobileSmall){
+    left: 50%;
+  }
+  .loaded & {
+    transition: transform .75s ease, bottom .75s ease;
+  }
+  // .scroll-btn__block
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: toRem(7);
+  }
+  // .scroll-btn__img-top
+  &__img-top {
+  }
+  // .scroll-btn__img-arr
+  &__img-arr {
+    animation: scrollArrowMove 1.5s ease-in-out infinite;
+  }
+}
+
+%scrollBtnAnim {
+  transition-delay: 0.85s;
+  @media (min-width:$mobileSmall){
+    bottom: toRem(20);
+    transform: translate(-50%,0%);
+  }
+}
+
+@keyframes scrollArrowMove {
+  0%, 100% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+
 .pack {
   position: absolute;
   transition: transform .75s ease, bottom .75s ease, left .75s ease, right .85s ease, opacity .55s ease-in-out;
@@ -527,7 +584,7 @@
         bottom: -17%;
       }
       @media (max-width: toEm(820.98)){
-        bottom: 10%;
+        bottom: 5%;
       }
       @media (max-width: toEm(390.98)){
         bottom: 3%;
@@ -575,8 +632,6 @@
 }
 
 
-
-
 // === SECTION 0 ================================
 .section-0 {
   &::before {
@@ -586,13 +641,35 @@
     z-index: 2;
     backdrop-filter: blur(15px);
     background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
     // opacity: 0;
     .loaded & {
       opacity: 0;
       transition: opacity .85s linear 1.4s;
     }
   }
-
+  .scroll-btn {
+    @media (max-width:$mobileSmall){
+       left: 80%; 
+    }
+    .loaded.fp-section-0:not(.fp-up) & {
+      bottom: toRem(20);
+      transform: translate(-50%,0%);
+      transition-delay: 5s;
+      @media (max-width:$mobileSmall){
+        bottom: 40%;
+        transform: translate(-50%,0%);
+      }
+    }
+    .fp-section-0.fp-up & {
+      @extend %scrollBtnAnim;
+      @media (max-width:$mobileSmall){
+        bottom: 40%;
+        transform: translate(-50%,0%);
+      }
+    }
+   
+  }
   // .section-0__wrapper
   &__wrapper {
   }
@@ -644,7 +721,7 @@
     transform: translate(0%,0%) rotate(11deg) scale(0.7);
     ._step-02 & {
       left: 10%;
-      bottom: 22.5%;
+      bottom: 17%;
       opacity: 1;
       transform: translate(0%,0%) rotate(-5.7deg);
     }
@@ -697,9 +774,20 @@
   }
 }
 
-
 // === SECTION 1 ================================
 .section-1 {
+  .scroll-btn {
+    @media (max-width:$mobileSmall){
+       left: 80%; 
+    }
+    .fp-section-1 & {
+      @extend %scrollBtnAnim;
+      @media (max-width:$mobileSmall){
+        bottom: 15%;
+        transform: translate(-50%,0%);
+      }
+    }
+  }
     // .section-1__bg
     &__bg {
       img {
@@ -714,11 +802,43 @@
 
 // === SECTION 2 ================================
 .section-2 {
+  .scroll-btn {
+    @media (max-width:$mobileSmall){
+       left: 50%; 
+    }
+    .fp-section-2 & {
+      @extend %scrollBtnAnim;
+      @media (max-width:$mobileSmall){
+        bottom: 13%;
+        transform: translate(-50%,0%);
+      }
+    }
+  }
 }
 
 
 // === SECTION 3 ================================
 .section-3 {
+  .scroll-btn {
+    @media (max-width:$mobileSmall){
+       left: 50%; 
+    }
+    .fp-section-3 & {
+      @extend %scrollBtnAnim;
+      @media (max-width:$mobileSmall){
+        bottom: 13%;
+        transform: translate(-50%,0%);
+      }
+    }
+  }
+     // .section-1__bg
+     &__bg {
+      img {
+        @media (max-width:toEm(820.98)){
+           object-position: bottom; 
+        }
+      }
+    }
 }
 
 

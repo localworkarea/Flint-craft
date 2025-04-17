@@ -471,7 +471,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   z-index: 2
 }
 .over-els__txt {
@@ -501,7 +501,6 @@ body {
 .over-els__txt--01 {
   z-index: 3;
   left: 100%;
-  bottom: 14%;
   opacity: 0
 }
 ._step-02 .over-els__txt--01 {
@@ -524,7 +523,7 @@ body {
 }
 .over-els__txt--03 {
   left: 100%;
-  bottom: 14%
+  bottom: 16%
 }
 .fp-section-2 .over-els__txt--03 {
   left: 50%;
@@ -584,6 +583,64 @@ body {
 .txt-fs-8 {
   letter-spacing: -.01em
 }
+.scroll-btn {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  -webkit-transform: translate(-50%,100%);
+  transform: translate(-50%,100%);
+  display: grid;
+  place-items: center;
+  width: 5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,.25);
+  background: linear-gradient(93deg,#d30b54 0,#ea2815 100%)
+}
+.loaded .scroll-btn {
+  transition: bottom .75s ease,-webkit-transform .75s ease;
+  transition: transform .75s ease,bottom .75s ease;
+  transition: transform .75s ease,bottom .75s ease,-webkit-transform .75s ease
+}
+.scroll-btn__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4375rem
+}
+.scroll-btn__img-arr {
+  -webkit-animation: scrollArrowMove 1.5s ease-in-out infinite;
+  animation: scrollArrowMove 1.5s ease-in-out infinite
+}
+.fp-section-0.fp-up .section-0 .scroll-btn,
+.fp-section-1 .section-1 .scroll-btn,
+.fp-section-2 .section-2 .scroll-btn,
+.fp-section-3 .section-3 .scroll-btn {
+  transition-delay: .85s
+}
+@-webkit-keyframes scrollArrowMove {
+  0%,
+  100% {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px)
+  }
+  50% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px)
+  }
+}
+@keyframes scrollArrowMove {
+  0%,
+  100% {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px)
+  }
+  50% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px)
+  }
+}
 .pack {
   position: absolute;
   transition: bottom .75s ease,left .75s ease,right .85s ease,opacity .55s ease-in-out,-webkit-transform .75s ease;
@@ -620,11 +677,18 @@ body {
   inset: 0;
   z-index: 2;
   backdrop-filter: blur(15px);
-  background-color: rgba(0,0,0,.4)
+  background-color: rgba(0,0,0,.4);
+  pointer-events: none
 }
 .loaded .section-0::before {
   opacity: 0;
   transition: opacity .85s linear 1.4s
+}
+.loaded.fp-section-0:not(.fp-up) .section-0 .scroll-btn {
+  bottom: 1.25rem;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  transition-delay: 5s
 }
 .pack-open {
   position: absolute;
@@ -792,6 +856,9 @@ body {
     -webkit-transform: translate(-100%,0);
     transform: translate(-100%,0)
   }
+  .over-els__txt--01 {
+    bottom: 14%
+  }
   ._step-02 .over-els__txt--01 {
     left: 8%
   }
@@ -799,6 +866,17 @@ body {
     left: 0;
     -webkit-transform: translate(-100%,0);
     transform: translate(-100%,0)
+  }
+  .scroll-btn {
+    left: 50%
+  }
+  .fp-section-0.fp-up .section-0 .scroll-btn,
+  .fp-section-1 .section-1 .scroll-btn,
+  .fp-section-2 .section-2 .scroll-btn,
+  .fp-section-3 .section-3 .scroll-btn {
+    bottom: 1.25rem;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0)
   }
   .pack-open {
     left: 54%;
@@ -865,7 +943,7 @@ body {
     transform: translate(-50%,-50%) scale(1.5)
   }
   .over-els__txt--02 {
-    bottom: 14%
+    bottom: 18%
   }
   .fp-section-3 .over-els__txt--04,
   .fp-section-4 .over-els__txt--04 {
@@ -1005,17 +1083,17 @@ body {
     transform: translate(-50%,-50%) scale(1)
   }
   .over-els__txt--02 {
-    top: 45%
+    top: 50%
   }
   .fp-section-3 .over-els__txt--04,
   .fp-section-4 .over-els__txt--04 {
-    top: 75%
+    top: 68%
   }
   .pack.pack-two {
     left: -2%
   }
   .fp-section-1 .pack.pack-two {
-    bottom: 10%
+    bottom: 5%
   }
   .fp-section-2 .pack.pack-two,
   .fp-section-3 .pack.pack-two,
@@ -1029,6 +1107,10 @@ body {
     bottom: 19%
   }
   .section-1__bg img {
+    -o-object-position: bottom;
+    object-position: bottom
+  }
+  .section-3__bg img {
     -o-object-position: bottom;
     object-position: bottom
   }
@@ -1056,6 +1138,7 @@ body {
     transform: translate(-100%,0)
   }
   .over-els__txt--01 {
+    bottom: 8%;
     -webkit-transform: translate(0,0);
     transform: translate(0,0)
   }
@@ -1102,6 +1185,19 @@ body {
   .pack {
     width: 12.375rem
   }
+  .section-0 .scroll-btn {
+    left: 80%
+  }
+  .loaded.fp-section-0:not(.fp-up) .section-0 .scroll-btn {
+    bottom: 40%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0)
+  }
+  .fp-section-0.fp-up .section-0 .scroll-btn {
+    bottom: 40%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0)
+  }
   .section-0__bg img {
     -o-object-position: bottom;
     object-position: bottom
@@ -1118,7 +1214,7 @@ body {
   }
   ._step-02 .pack-open {
     left: 10%;
-    bottom: 22.5%;
+    bottom: 17%;
     opacity: 1;
     -webkit-transform: translate(0,0) rotate(-5.7deg);
     transform: translate(0,0) rotate(-5.7deg)
@@ -1127,6 +1223,30 @@ body {
     left: 0;
     -webkit-transform: translate(-100%,0) rotate(-5.7deg);
     transform: translate(-100%,0) rotate(-5.7deg)
+  }
+  .section-1 .scroll-btn {
+    left: 80%
+  }
+  .fp-section-1 .section-1 .scroll-btn {
+    bottom: 15%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0)
+  }
+  .section-2 .scroll-btn {
+    left: 50%
+  }
+  .fp-section-2 .section-2 .scroll-btn {
+    bottom: 13%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0)
+  }
+  .section-3 .scroll-btn {
+    left: 50%
+  }
+  .fp-section-3 .section-3 .scroll-btn {
+    bottom: 13%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0)
   }
   .fp-section-4 .section-4__list {
     bottom: -7.5rem
