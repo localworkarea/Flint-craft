@@ -1,0 +1,135 @@
+// размер шрифта для пк на 10% меньше макетного
+.txt-fs-1 {
+  @include adaptiveValue("font-size", 110, 85,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 85, 55,3,1440.98,480.98);
+}
+.txt-fs-2 {
+  @include adaptiveValue("font-size", 75, 58,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 58, 37,3,1440.98,480.98);
+}
+.txt-fs-3 {
+  @include adaptiveValue("font-size", 52, 40,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 40, 26,3,1440.98,480.98);
+  letter-spacing: -0.01em;
+}
+.txt-fs-4 {
+  @include adaptiveValue("font-size", 47, 40,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 40, 31,3,1440.98,480.98);
+  letter-spacing: -0.01em;
+  line-height: 1.03;
+}
+.txt-fs-5 {
+  @include adaptiveValue("font-size", 47, 40,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 40, 35,3,1440.98,480.98);
+  letter-spacing: -0.01em;
+  line-height: 1.03;
+}
+.txt-fs-6 {
+  @include adaptiveValue("font-size", 75, 55,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 55, 26,3,1440.98,480.98);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.txt-fs-7 {
+  @include adaptiveValue("font-size", 48, 33,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 33, 28,3,1440.98,480.98);
+  letter-spacing: -0.03em;
+}
+.txt-fs-8 {
+  @include adaptiveValue("font-size", 86, 60,2,1920.98,1440.98);
+  @include adaptiveValue("font-size", 60, 51,3,1440.98,480.98);
+  letter-spacing: -0.01em;
+}
+
+%ImgSize {
+  width: 100%;
+  height: auto;
+}
+%transition-1 {
+  transition: opacity .45s ease;
+}
+
+@keyframes spin-1 {
+  0% {
+    transform: rotate(0deg) scale(2.1);
+  }
+ 
+  100% {
+    transform: rotate(1080deg) scale(1);
+  }
+}
+@keyframes spin-2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(720deg);
+  }
+  
+  65% {
+    transform: rotate(720deg);
+  }
+  100% {
+    transform: rotate(1440deg);
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  
+  65% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity-2 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity-2-rev {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes opacity-rev {
+  0% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  
+  65% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

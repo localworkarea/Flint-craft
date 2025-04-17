@@ -116,7 +116,7 @@ body {
   overscroll-behavior: none
 }
 [data-fp] {
-  min-height: 100svh
+  min-height: 100dvh
 }
 .fp-init [data-fp] {
   z-index: 1;
@@ -166,15 +166,26 @@ body {
   -o-object-fit: contain;
   object-fit: contain
 }
-.section__wrapper {
-  position: absolute;
-  overflow: hidden;
-  inset: 0;
-  z-index: 1
+.txt-fs-3 {
+  letter-spacing: -.01em
 }
-.section__bg {
-  position: absolute;
-  inset: 0
+.txt-fs-4 {
+  letter-spacing: -.01em;
+  line-height: 1.03
+}
+.txt-fs-5 {
+  letter-spacing: -.01em;
+  line-height: 1.03
+}
+.txt-fs-6 {
+  letter-spacing: -.01em;
+  line-height: 1.2
+}
+.txt-fs-7 {
+  letter-spacing: -.03em
+}
+.txt-fs-8 {
+  letter-spacing: -.01em
 }
 .logo__crount-norm,
 .logo__crount-spin,
@@ -360,6 +371,19 @@ body {
     opacity: 1
   }
 }
+.section__wrapper {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  z-index: 1
+}
+.section__bg {
+  position: absolute;
+  inset: 0
+}
 .logo {
   position: fixed;
   top: 50%;
@@ -471,7 +495,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100svh;
+  height: 100dvh;
   z-index: 2
 }
 .over-els__txt {
@@ -511,8 +535,8 @@ body {
 }
 .fp-section-1 .over-els__txt--02 {
   left: 50%;
-  -webkit-transform: translate(-50%,0);
-  transform: translate(-50%,0)
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%)
 }
 .fp-section-2 .over-els__txt--02,
 .fp-section-3 .over-els__txt--02,
@@ -561,27 +585,6 @@ body {
   -webkit-transform-origin: center;
   transform-origin: center;
   text-align: center
-}
-.txt-fs-3 {
-  letter-spacing: -.01em
-}
-.txt-fs-4 {
-  letter-spacing: -.01em;
-  line-height: 1.03
-}
-.txt-fs-5 {
-  letter-spacing: -.01em;
-  line-height: 1.03
-}
-.txt-fs-6 {
-  letter-spacing: -.01em;
-  line-height: 1.2
-}
-.txt-fs-7 {
-  letter-spacing: -.03em
-}
-.txt-fs-8 {
-  letter-spacing: -.01em
 }
 .scroll-btn {
   position: absolute;
@@ -950,10 +953,10 @@ body {
     top: 25%
   }
   .pack.pack-two {
-    left: 19%
+    left: 10%
   }
   .fp-section-1 .pack.pack-two {
-    bottom: -17%
+    bottom: 3%
   }
   .fp-section-2 .pack.pack-two,
   .fp-section-3 .pack.pack-two,
@@ -990,18 +993,6 @@ body {
   }
 }
 @media (min-width:120.06125em) {
-  .logo__flint {
-    width: 6.25rem
-  }
-  .logo__crount {
-    width: 14.5rem
-  }
-  .over-els__txt-wr {
-    padding-block: 1.25rem
-  }
-  .over-els__txt-wr {
-    padding-inline: 1.6875rem
-  }
   .txt-fs-1 {
     font-size: 6.875rem
   }
@@ -1025,6 +1016,18 @@ body {
   }
   .txt-fs-8 {
     font-size: 5.375rem
+  }
+  .logo__flint {
+    width: 6.25rem
+  }
+  .logo__crount {
+    width: 14.5rem
+  }
+  .over-els__txt-wr {
+    padding-block: 1.25rem
+  }
+  .over-els__txt-wr {
+    padding-inline: 1.6875rem
   }
   .pack {
     width: 29.375rem
@@ -1083,7 +1086,7 @@ body {
     transform: translate(-50%,-50%) scale(1)
   }
   .over-els__txt--02 {
-    top: 50%
+    top: 55%
   }
   .fp-section-3 .over-els__txt--04,
   .fp-section-4 .over-els__txt--04 {
@@ -1110,12 +1113,40 @@ body {
     -o-object-position: bottom;
     object-position: bottom
   }
+  .section-2__bg img {
+    -o-object-position: top;
+    object-position: top
+  }
   .section-3__bg img {
     -o-object-position: bottom;
     object-position: bottom
   }
 }
 @media (max-width:30.06125em) {
+  .txt-fs-1 {
+    font-size: 3.4375rem
+  }
+  .txt-fs-2 {
+    font-size: 2.3125rem
+  }
+  .txt-fs-3 {
+    font-size: 1.625rem
+  }
+  .txt-fs-4 {
+    font-size: 1.9375rem
+  }
+  .txt-fs-5 {
+    font-size: 2.1875rem
+  }
+  .txt-fs-6 {
+    font-size: 1.625rem
+  }
+  .txt-fs-7 {
+    font-size: 1.75rem
+  }
+  .txt-fs-8 {
+    font-size: 3.1875rem
+  }
   .logo__flint {
     width: 6.25rem!important
   }
@@ -1157,30 +1188,6 @@ body {
   }
   .over-els__txt-wr {
     padding-inline: .75rem
-  }
-  .txt-fs-1 {
-    font-size: 3.4375rem
-  }
-  .txt-fs-2 {
-    font-size: 2.3125rem
-  }
-  .txt-fs-3 {
-    font-size: 1.625rem
-  }
-  .txt-fs-4 {
-    font-size: 1.9375rem
-  }
-  .txt-fs-5 {
-    font-size: 2.1875rem
-  }
-  .txt-fs-6 {
-    font-size: 1.625rem
-  }
-  .txt-fs-7 {
-    font-size: 1.75rem
-  }
-  .txt-fs-8 {
-    font-size: 3.1875rem
   }
   .pack {
     width: 12.375rem
@@ -1236,7 +1243,7 @@ body {
     left: 50%
   }
   .fp-section-2 .section-2 .scroll-btn {
-    bottom: 13%;
+    bottom: 1.25rem;
     -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0)
   }
@@ -1244,7 +1251,7 @@ body {
     left: 50%
   }
   .fp-section-3 .section-3 .scroll-btn {
-    bottom: 13%;
+    bottom: 1.25rem;
     -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0)
   }
@@ -1307,7 +1314,7 @@ body {
     top: 10%
   }
   .over-els__txt--02 {
-    top: 40%
+    top: 60%
   }
   .fp-section-1 .pack.pack-two {
     bottom: 3%
@@ -1324,35 +1331,7 @@ body {
     width: 8.5625rem!important
   }
 }
-@media (max-width:96.93625em)and (min-width:51.31125em) {
-  .fp-section-1 .logo {
-    left: 93%;
-    top: 10%
-  }
-  .fp-section-2 .logo {
-    left: 93%;
-    top: 10%
-  }
-  .fp-section-3 .logo {
-    top: 10%
-  }
-  .fp-section-4 .logo {
-    top: 10%
-  }
-}
 @media (min-width:90.06125em)and (max-width:120.06125em) {
-  .logo__flint {
-    width: clamp(4.375rem ,-1.253828125rem + 6.25vw ,6.25rem)
-  }
-  .logo__crount {
-    width: clamp(10.125rem ,-3.0089322917rem + 14.5833333333vw ,14.5rem)
-  }
-  .over-els__txt-wr {
-    padding-block: clamp(.875rem ,-.250765625rem + 1.25vw ,1.25rem)
-  }
-  .over-els__txt-wr {
-    padding-inline: clamp(1.3125rem ,.186734375rem + 1.25vw ,1.6875rem)
-  }
   .txt-fs-1 {
     font-size: clamp(5.3125rem ,.6218098958rem + 5.2083333333vw ,6.875rem)
   }
@@ -1377,6 +1356,18 @@ body {
   .txt-fs-8 {
     font-size: clamp(3.75rem ,-1.1283177083rem + 5.4166666667vw ,5.375rem)
   }
+  .logo__flint {
+    width: clamp(4.375rem ,-1.253828125rem + 6.25vw ,6.25rem)
+  }
+  .logo__crount {
+    width: clamp(10.125rem ,-3.0089322917rem + 14.5833333333vw ,14.5rem)
+  }
+  .over-els__txt-wr {
+    padding-block: clamp(.875rem ,-.250765625rem + 1.25vw ,1.25rem)
+  }
+  .over-els__txt-wr {
+    padding-inline: clamp(1.3125rem ,.186734375rem + 1.25vw ,1.6875rem)
+  }
   .pack {
     width: clamp(22.75rem ,2.8614739583rem + 22.0833333333vw ,29.375rem)
   }
@@ -1388,12 +1379,6 @@ body {
   }
 }
 @media (min-width:30.06125em)and (max-width:90.06125em) {
-  .over-els__txt-wr {
-    padding-block: clamp(.75rem ,.6873723958rem + .2083333333vw ,.875rem)
-  }
-  .over-els__txt-wr {
-    padding-inline: clamp(.75rem ,.4681757813rem + .9375vw ,1.3125rem)
-  }
   .txt-fs-1 {
     font-size: clamp(3.4375rem ,2.4980859375rem + 3.125vw ,5.3125rem)
   }
@@ -1418,6 +1403,12 @@ body {
   .txt-fs-8 {
     font-size: clamp(3.1875rem ,2.9056757813rem + .9375vw ,3.75rem)
   }
+  .over-els__txt-wr {
+    padding-block: clamp(.75rem ,.6873723958rem + .2083333333vw ,.875rem)
+  }
+  .over-els__txt-wr {
+    padding-inline: clamp(.75rem ,.4681757813rem + .9375vw ,1.3125rem)
+  }
   .pack {
     width: clamp(12.375rem ,7.1769088542rem + 17.2916666667vw ,22.75rem)
   }
@@ -1426,6 +1417,22 @@ body {
   }
   .video-youtube__button::before {
     width: clamp(3.75rem ,2.4974479167rem + 4.1666666667vw ,6.25rem)
+  }
+}
+@media (max-width:96.93625em)and (min-width:51.31125em) {
+  .fp-section-1 .logo {
+    left: 93%;
+    top: 10%
+  }
+  .fp-section-2 .logo {
+    left: 93%;
+    top: 10%
+  }
+  .fp-section-3 .logo {
+    top: 10%
+  }
+  .fp-section-4 .logo {
+    top: 10%
   }
 }
 @media (min-width:30.06125em)and (max-width:120.06125em) {
