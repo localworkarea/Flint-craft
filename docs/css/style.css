@@ -1064,23 +1064,29 @@ body {
   }
 }
 @media (max-width:51.31125em) {
+  .loaded .logo {
+    top: 1.25rem;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0)
+  }
   .fp-section-1 .logo {
-    top: 8%;
-    left: 13%;
-    -webkit-transform: translate(-50%,-50%) scale(.7);
-    transform: translate(-50%,-50%) scale(.7)
+    left: 1.25rem;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
   }
   .fp-section-2 .logo {
-    top: 8%;
-    left: 13%;
-    -webkit-transform: translate(-50%,-50%) scale(.7);
-    transform: translate(-50%,-50%) scale(.7)
+    left: 1.25rem;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
   }
   .fp-section-3 .logo {
-    top: 20%;
+    top: 5rem;
     left: 50%;
-    -webkit-transform: translate(-50%,-50%) scale(1);
-    transform: translate(-50%,-50%) scale(1)
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0)
+  }
+  .fp-section-4 .logo {
+    top: 3.75rem
   }
   .over-els__txt--02 {
     top: 55%
@@ -1139,9 +1145,6 @@ body {
   }
   .txt-fs-8 {
     font-size: 3.1875rem
-  }
-  .loaded .logo {
-    top: 20%
   }
   .logo__flint {
     width: 6.25rem!important
@@ -1305,10 +1308,12 @@ body {
     width: 3.75rem
   }
 }
-@media (max-width:24.43625em) {
-  .loaded .logo {
-    top: 10%
+@media (max-width:24.62375em)and (max-height:43.81125em) {
+  .fp-section-3 .logo {
+    top: 2.5rem
   }
+}
+@media (max-width:24.43625em) {
   .over-els__txt--02 {
     top: 60%
   }
@@ -1319,15 +1324,15 @@ body {
     bottom: 29%
   }
 }
-@media (max-width:24.62375em) {
+@media (max-width:23.49875em) {
   .fp-section-3 .logo {
-    top: 13%
+    top: 1.25rem
+  }
+  .fp-section-4 .logo {
+    top: 1.25rem
   }
 }
 @media (max-width:23.81125em) {
-  .logo__flint {
-    width: 5rem!important
-  }
   .logo__crount {
     width: 8.5625rem!important
   }

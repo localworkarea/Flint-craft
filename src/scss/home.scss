@@ -34,12 +34,13 @@
       top: 10%;
       transform: translate(-50%,-50%) scale(1.5);
     }
-    @media (max-width:$mobileSmall){
-       top: 20%; 
+    @media (max-width:toEm(820.98)){
+       top: toRem(20); 
+       transform: translate(-50%,0%);
     }
-    @media (max-width:toEm(390.98)){
-       top: 10%; 
-    }
+    // @media (max-width:toEm(390.98)){
+    //    top: 10%; 
+    // }
     transition: top .85s ease 1.4s, left .75s ease, transform .75s ease;
   }
   ._step-03 & {
@@ -54,9 +55,9 @@
       top: 10%;
     }
     @media (max-width:toEm(820.98)){
-      top: 8%;
-      left: 13%;
-      transform: translate(-50%,-50%) scale(.7);
+      // top: 8%;
+      left: toRem(20);
+      transform: translate(0%,0%);
     }
   }
   .fp-section-2 & {
@@ -68,9 +69,8 @@
       top: 10%;
     }
     @media (max-width:toEm(820.98)){
-      top: 8%;
-      left: 13%;
-      transform: translate(-50%,-50%) scale(.7);
+      left: toRem(20);
+      transform: translate(0%,0%);
     }
   }
   .fp-section-3 & {
@@ -82,12 +82,15 @@
       transform: translate(-50%,-50%) scale(1.5);
     }
     @media (max-width:toEm(820.98)){
-      top: 20%;
+      top: toRem(80);
       left: 50%;
-      transform: translate(-50%,-50%) scale(1);
+      transform: translate(-50%,0%);
     }
-    @media (max-width: toEm(393.98)){
-      top: 13%;
+    @media (max-width: toEm(393.98)) and (max-height:toEm(700.98)) {
+      top: toRem(40);
+    }
+    @media (max-width: toEm(375.98)){
+      top: toRem(20);
     }
   }
   .fp-section-4 & {
@@ -97,9 +100,12 @@
     @media (max-width: toEm(1550.98)) and (min-width:toEm(820.98)){
       top: 10%;
     }
-    // @media (max-width: toEm(820.98)){
-    //   top: 8%;
-    // }
+    @media (max-width: toEm(820.98)){
+      top: toRem(60);
+    }
+    @media (max-width: toEm(375.98)){
+      top: toRem(20);
+    }
   }
 	// .logo__wrapper
 	&__wrapper {
@@ -127,9 +133,9 @@
     @media (max-width:$mobileSmall){
       width: toRem(100) !important; 
     }
-    @media (max-width: toEm(380.98)){
-      width: toRem(80) !important; 
-    }
+    // @media (max-width: toEm(380.98)){
+    //   width: toRem(80) !important; 
+    // }
   }
   // .logo__flint-svg
   &__flint-svg {
