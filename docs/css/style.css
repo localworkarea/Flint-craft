@@ -1048,9 +1048,6 @@ body {
   }
 }
 @media (max-width:96.93625em) {
-  .loaded .logo {
-    top: 20%
-  }
   .loaded .over-els__txt--00 {
     bottom: 14%
   }
@@ -1142,6 +1139,9 @@ body {
   }
   .txt-fs-8 {
     font-size: 3.1875rem
+  }
+  .loaded .logo {
+    top: 20%
   }
   .logo__flint {
     width: 6.25rem!important
@@ -1431,6 +1431,11 @@ body {
   }
 }
 @media (max-width:96.93625em)and (min-width:51.31125em) {
+  .loaded .logo {
+    top: 10%;
+    -webkit-transform: translate(-50%,-50%) scale(1.5);
+    transform: translate(-50%,-50%) scale(1.5)
+  }
   .fp-section-1 .logo {
     left: 93%;
     top: 10%

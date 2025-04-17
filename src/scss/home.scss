@@ -30,8 +30,12 @@
     @media (min-width:toEm(1550.98)){
       top: 14%;
     }
-    @media (max-width:toEm(1550.98)){
-      top: 20%;
+    @media (max-width:toEm(1550.98)) and (min-width:toEm(820.98)) {
+      top: 10%;
+      transform: translate(-50%,-50%) scale(1.5);
+    }
+    @media (max-width:$mobileSmall){
+       top: 20%; 
     }
     @media (max-width:toEm(390.98)){
        top: 10%; 
