@@ -82,6 +82,9 @@
       left: 50%;
       transform: translate(-50%,-50%) scale(1);
     }
+    @media (max-width: toEm(393.98)){
+      top: 13%;
+    }
   }
   .fp-section-4 & {
     @media (min-width:toEm(1500.98)){
@@ -556,6 +559,9 @@
   // .section-0__bg
   &__bg {
     img {
+      @media (min-width:$mobileSmall){
+        //  object-position: top; 
+      }
       @media (max-width:$mobileSmall){
          object-position: bottom; 
       }

@@ -1319,6 +1319,11 @@ body {
     bottom: 29%
   }
 }
+@media (max-width:24.62375em) {
+  .fp-section-3 .logo {
+    top: 13%
+  }
+}
 @media (max-width:23.81125em) {
   .logo__flint {
     width: 5rem!important
